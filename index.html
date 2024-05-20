@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automated Drip Irrigation System</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .content {
+      padding: 20px;
+    }
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      height: 70vh;
+      overflow: hidden;
+    }
+    .slideshow-container img {
+      width: 100%;
+      object-fit: cover;
+      height: 70vh;
+    }
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @-webkit-keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    @keyframes fade {
+      from {opacity: .4}
+      to {opacity: 1}
+    }
+    .feature-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+.watering-icon {
+  color: #34C759;
+}
+.sensor-monitoring-icon {
+  color: #F7DC6F;
+}
+.water-usage-icon {
+  color: #8BC34A;
+}
+.icon-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon-container i {
+  font-size: 48px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+}
+
+.icon-text {
+  font-size: 18px;
+  margin-top: 10px;
+  display: block;
+}
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-container {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.content {
+  padding: 20px;
+  padding-bottom: 120px; /* Add padding to the bottom of the content to accommodate the contact section */
+}
+
+.content:after {
+  content: "";
+  display: block;
+  height: 120px; /* Height of the contact section */
+}
+
+.scrolled .contact-container {
+  opacity: 1;
+  visibility: visible;
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="registration.html">Device Registration</a>
+  <a href="monitor.html">Monitor</a>
+</nav>
+
+<div class="content">
+  <h2>Welcome to the Automated Drip Irrigation System</h2>
+  
+  <div class="slideshow-container">
+    <img class="mySlides fade" src="img2.jpg" alt="Image 1">
+    <img class="mySlides fade" src="img3.jpg" alt="Image 2">
+    <img class="mySlides fade" src="img4.jpg" alt="Image 3">
+    <img class="mySlides fade" src="img5.jpg" alt="Image 4">
+  </div>
+  
+  <p>This system helps in efficient watering of your plants using drip irrigation technology.</p>
+  <p>The system provides: Automated watering schedules, Optimized water usage, Real-time monitoring of soil moisture and environmental conditions and Remote control and management of irrigation devices </p>
+  
+  <div class="icon-row">
+  <div class="icon-container">
+    <i class="bi-calendar-check feature-icon watering-icon"></i>
+    <p class="icon-text">Watering Schedule</p>
+  </div>
+  
+  <div class="icon-container">
+    <i class="bi-bar-chart feature-icon sensor-monitoring-icon"></i>
+    <p class="icon-text">Sensor Monitoring</p>
+  </div>
+  
+  <div class="icon-container">
+    <i class="bi-droplet-half feature-icon water-usage-icon"></i>
+    <p class="icon-text">Water Usage</p>
+  </div>
+</div>
+
+<div class="contact-container">
+      <h3>Contacts</h3>
+    <div class="contact-item">
+        <i class="bi-person-fill"></i>
+        <p>Name: Helga George</p>
+        <p>Name: Ghati Richard</p>
+      </div>
+    <div class="contact-item">
+      <i class="bi-telephone-fill"></i>
+      <p>Phone: 0626255399</p>
+      <p>Phone: 0789472426</p>
+    </div>
+    <div class="contact-item">
+      <i class="bi-envelope-fill"></i>
+      <p>Email: helgageorge133@gmail.com</p>
+      <p>Email: ghatijeliamasatu@gmail.com</p>
+    </div>
+    
+  </div>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+</script>
+
+<script>
+window.addEventListener("scroll", function() {
+    var body = document.body;
+    if (window.pageYOffset > 0) {
+      body.classList.add("scrolled");
+    } else {
+      body.classList.remove("scrolled");
+    }
+  });
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>

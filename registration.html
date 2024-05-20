@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Device</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Style for the buttons */
+        .button-container {
+            margin-top: 15px; /* Add margin at the top of the button container */
+            text-align: center; /* Center align the content */
+        }
+        .button-container button {
+            margin-right: 10px; /* Add margin between the buttons */
+            background-color: rgb(221, 221, 216);
+            color: black;
+
+        }
+
+ /* Body background image */
+ body {
+            background-image: url(img1.jpg); /* Replace 'path_to_your_image.jpg' with the actual path to your image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            color:black; /* Text color */
+        }
+
+        /* Style for the form */
+        form {
+            padding: 20px;
+            background-color: #fff; /* White background color for the form */
+            border-radius: 5px;
+            margin: 20px auto; /* Center the form */
+            max-width: 400px; /* Limit the width of the form */
+            color: #000;
+        }
+
+        h3{
+            text-align: center;
+        }
+    
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  font-family: 'Pacifico', cursive;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Style for the Connect Device button */
+.connect-button {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add margin at the top of the button */
+}
+  /* Style for the Back and Next buttons */
+.back-next-button {
+  padding: 10px 20px; /* Reduce the padding of the buttons */
+  font-size: 14px; /* Reduce the font size of the buttons */
+}
+  </style>
+</head>
+<body>
+    <!--<nav>
+        <a href="index.html">Home</a>
+        <a href="registration.html" class="active">Device Registration</a>
+        <a href="monitor.html">Monitor</a>
+      </nav>
+      <-->
+    <h3>Add New Device</h3>
+    <form>
+        <label for="deviceName">Device Name:</label><br>
+        <input type="text" id="deviceName" name="deviceName" required><br><br>
+        
+        <label for="hostAddress">Host/IP Address:</label><br>
+        <input type="text" id="hostAddress" name="hostAddress" required><br><br>
+        
+        <label for="sshPort">SSH Port:</label><br>
+        <input type="number" id="sshPort" name="sshPort" required><br><br>
+        
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Add Device">
+    </form>
+   
+     
+    <!-- Button container with spacing -->
+    <div class="connect-button">
+        <button onclick="connectDevice()">Connect Device</button>
+    </div>
+
+    <!-- Back and Next button container -->
+<div class="button-container">
+    <button id="back-button" class="back-next-button">Back</button>
+    <button id="next-button" class="back-next-button">Next</button>
+  </div>
+
+    <script>
+        function connectDevice() {
+            // Add your connect device logic here
+            alert("Connecting device...");
+        }
+    </script>
+
+<script>
+document.getElementById("back-button").addEventListener("click", function() {
+    window.location.href = "index.html";
+  });
+  
+  document.getElementById("next-button").addEventListener("click", function() {
+    window.location.href = "monitor.html";
+  });
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcd.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

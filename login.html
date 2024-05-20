@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('img1.jpg'); /* Replace 'background_image.jpg' with the path to your background image */
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      width: 300px;
+      margin: 0 auto;
+      padding-top: 100px;
+      background-color: rgba(255, 255, 255, 0.8); /* Add transparency to the container */
+      border-radius: 10px; /* Rounded corners for the container */
+      padding: 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 style="text-align: center;">Welcome</h1>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<!-- Link to the home page -->
+<div style="text-align: center; margin-top: 20px;">
+  <a href="index.html">Go to Home Page</a>
+</div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault();
+    var username = document.getElementById("loginForm").elements["username"].value;
+    var password = document.getElementById("loginForm").elements["password"].value;
+    
+    // Example: Check username and password against stored values
+    if(username === "example_user" && password === "example_password") {
+      alert("Login successful!");
+      // Redirect to dashboard or next page
+      // window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid username or password. Please try again.");
+    }
+  });
+</script>
+
+</body>
+</html>

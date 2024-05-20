@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  nav a.active {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .icon-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .icon-container {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .feature-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .icon-text {
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .details {
+    padding: 20px;
+  }
+  
+  .hidden-section {
+    display: none;
+  }
+  
+  /* Existing CSS remains the same */
+
+.icon-container {
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none; /* Remove underlines from links */
+    color: inherit; /* Inherit text color from parent */
+    background-color: #C8E6C9; /* Light green background color */
+    padding: 30px; /* Add padding for better visual */
+    border-radius: 20px; /* Add border-radius for rounded corners */
+  }
+  
+  .icon-container:hover {
+    opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+  }
+
+.container{
+    text-align: center;
+} 
+#notification-alert {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  #water-pump-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  #water-pump-icon {
+    font-size: 48px;
+    margin-right: 10px;
+  }
