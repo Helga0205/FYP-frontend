@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automated Drip Irrigation System</title>
   <style>
+      body {
+      font-family: Arial, sans-serif;
+      background-image: url('img1.jpg'); /* Replace 'background_image.jpg' with the path to your background image */
+      background-size: cover;
+      background-position: center;
+    }
+    
     .sensor-data {
       border: 1px solid #ddd;
       padding: 10px;
@@ -19,10 +26,41 @@
       color: green;
     }
 
-    #back-button {
+    .button-container {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .back-next-button {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    .back-next-button:hover {
+      background-color: black;
+      color: white;
+    }
+
+    /* Gauge container styles */
+    .gauge-container {
+      display: flex;
+      justify-content: space-around;
       margin-top: 20px;
     }
 
+    .gauge {
+      width: 200px;
+      height: 160px;
+    }
   </style>
 </head>
 <body>
@@ -50,13 +88,26 @@
     <button id="stop-pump-1">Stop Pump</button>
   </div>
 
-  <h2>Alerts (placeholder)</h2>
+  <h2>Alerts</h2>
   <p id="alert-message"></p>
 
+  <!-- Real-time Gauges -->
+  <div class="gauge-container">
+    <div id="temp-gauge" class="gauge"></div>
+    <div id="humidity-gauge" class="gauge"></div>
+    <div id="moisture-gauge" class="gauge"></div>
+  </div>
 
+  <!-- Back and Next button container -->
+  <div class="button-container">
     <button id="back-button" class="back-next-button">Back</button>
+    <button id="next-button" class="back-next-button">Next</button>
+  </div>
 
-  
+  <!-- Include JustGage and Raphael.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.4.0/justgage.min.js"></script>
+
   <script>
     function startPump(zone) {
       console.log(`Starting pump for Zone ${zone}`);
@@ -90,11 +141,11 @@
       } else {
         wateringStatusElement.textContent = pumpState === 'on' ? 'Pump Running' : 'Idle';
       }
-    }
+    }  
 
     setInterval(() => {
       // Replace with fetched values
-      updateSensorData(1, 1, 0, /* pump state */ 'off'); 
+      updateSensorData(1, 1, 0, /* pump state */ 'off');
     }, 60000);
 
     const scheduleForm = document.getElementById('schedule-form');
@@ -120,10 +171,64 @@
       }, 5000); // Hide after 5 seconds
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("back-button").addEventListener("click", function() {
-    window.location.href = "registration.html";
-  });
+    // Ensure the back and next buttons exist before adding event listeners
+    const backButton = document.getElementById("back-button");
+    const nextButton = document.getElementById("next-button");
+
+    if (backButton) {
+      backButton.addEventListener("click", function() {
+        window.location.href = "registration.html";
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", function() {
+        window.location.href = "dashboard.html";
+      });
+    }
+
+    // Initialize gauges
+    const tempGauge = new JustGage({
+      id: "temp-gauge",
+      value: 0,
+      min: -10,
+      max: 50,
+      title: "Temperature (°C)"
+    });
+
+    const humidityGauge = new JustGage({
+      id: "humidity-gauge",
+      value: 0,
+      min: 0,
+      max: 100,
+      title: "Humidity (%)"
+    });
+
+    const moistureGauge = new JustGage({
+      id: "moisture-gauge",
+      value: 0,
+      min: 0,
+      max: 100,
+      title: "Moisture (g/m³)"
+    });
+
+    // Update gauges with real-time data
+    function updateGauges(temp, humidity, moisture) {
+      tempGauge.refresh(temp);
+      humidityGauge.refresh(humidity);
+      moistureGauge.refresh(moisture);
+    }
+
+    setInterval(() => {
+      // Fetch real-time data from your API or source
+      // Replace these example values with real data
+      const temp = Math.random() * 60 - 10; // Example temperature data
+      const humidity = Math.random() * 100; // Example humidity data
+      const moisture = Math.random() * 100; // Example moisture data
+
+      updateGauges(temp, humidity, moisture);
+    }, 5000); // Update every 5 seconds
+
   </script>
 </body>
 </html>

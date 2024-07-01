@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    position: relative;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-container{
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid red;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+#message{
+    text-align: center;
+    color: red;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.input-container label{
+    margin-bottom: 8px;
+}
+
+
+
+input[type="text"], input[type="password"], input[type="email"]{
+    padding: 10px;
+}
+
+
+
+
+button{
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+}
