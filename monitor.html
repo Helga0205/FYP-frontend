@@ -4,206 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automated Drip Irrigation System</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    .sensor-data {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+
+    #soil-moisture-1.dry {
+      color: red;
+    }
+
+    #watering-status-1.active {
+      color: green;
+    }
+
+    #back-button {
+      margin-top: 20px;
+    }
+
+  </style>
 </head>
 <body>
-    <div class="container">
-    <h4>AUTOMATE AND MONITOR YOUR FARM </h4>
+
+  <h2>AUTOMATE AND MONITOR YOUR FARM</h2>
+
+  <h2>Watering Schedule (Zone 1)</h2>
+  <form id="schedule-form">
+    <label for="start-time">Start Time:</label>
+    <input type="time" id="start-time" name="start-time" required>
+    <label for="duration">Duration (minutes):</label>
+    <input type="number" id="duration" name="duration" min="1" required>
+    <button type="submit">Save Schedule</button>
+  </form>
+
+  <h2>Zone 1 Monitoring</h2>
+  <div class="sensor-data">
+    <h3>Zone 1</h3>
+    <p>Soil Moisture: <span id="soil-moisture-1">1 (Dry)</span></p>
+    <p>Water Usage: <span id="water-usage-1">0 L</span></p>
+    <div class="watering-status">
+      <p>Status: <span id="watering-status-1">Idle</span></p>
     </div>
-    <div class="icon-row">
-        <div class="icon-container" id="watering-schedule">
-          <i class="bi-calendar-check feature-icon watering-icon"></i>
-          <p class="icon-text">Watering Schedule</p>
-        </div>
-        
-        <div class="icon-container" id="sensor-monitoring">
-          <i class="bi-bar-chart feature-icon sensor-monitoring-icon"></i>
-          <p class="icon-text">Sensor Monitoring</p>
-        </div>
-        
-        <div class="icon-container" id="water-usage">
-          <i class="bi-droplet-half feature-icon water-usage-icon"></i>
-          <p class="icon-text">Water Usage</p>
-        </div>
-      </div>
-      
-      <div id="watering-schedule-details" class="details hidden-section">
-        <h3>Watering Scheduling</h3>
-        <p>The water pump is scheduled to be switched on:</p>
-        <ul>
-          <li>Morning: 6:00 AM</li>
-          <li>Evening: 6:00 PM</li>
-        </ul>
-      </div>
-      
-      <div id="sensor-monitoring-details" class="details hidden-section">
-        <h3>Sensor Monitoring</h3>
-        <canvas id="sensor-chart"></canvas>
-      </div>
-      
-      <div id="water-usage-details" class="details hidden-section">
-        <h3>Water Pump</h3>
-        <div id="water-pump-status">
-            <i id="water-pump-icon" class="bi bi-droplet"></i>
-            <span id="water-pump-text">Off</span>
-          </div>        
-      </div>
-      
-      <a href="registration.html" class="back-button">Back to Registration</a>
-</div>
+    <button id="start-pump-1">Start Pump</button>
+    <button id="stop-pump-1">Stop Pump</button>
+  </div>
 
-</body>
-</html>
-    
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <h2>Alerts (placeholder)</h2>
+  <p id="alert-message"></p>
 
 
-<script>
-    // Function to toggle visibility of details
-function toggleDetails(id) {
-  var details = document.getElementById(id + '-details');
-  details.classList.toggle('hidden-section');
-}
+    <button id="back-button" class="back-next-button">Back</button>
 
-// Event listeners for icon containers
-document.getElementById('watering-schedule').addEventListener('click', function() {
-  toggleDetails('watering-schedule');
-});
+  
+  <script>
+    function startPump(zone) {
+      console.log(`Starting pump for Zone ${zone}`);
+      // Implement logic to send a signal to start the pump (e.g., API call, MQTT message)
+    }
 
-document.getElementById('sensor-monitoring').addEventListener('click', function() {
-  toggleDetails('sensor-monitoring');
-});
+    function stopPump(zone) {
+      console.log(`Stopping pump for Zone ${zone}`);
+      // Implement logic to send a signal to stop the pump
+    }
 
-document.getElementById('water-usage').addEventListener('click', function() {
-  toggleDetails('water-usage');
-});
+    function updateSensorData(zone, moisture, waterUsage, pumpState) {
+      const moistureText = moisture === 1 ? 'Dry' : 'Wet';
+      document.getElementById(`soil-moisture-${zone}`).textContent = `${moisture} (${moistureText})`;
+      document.getElementById(`water-usage-${zone}`).textContent = `${waterUsage} L`;
 
-// Simulated sensor data (0 for low, 1 for high)
-var sensorData = {
-  soilMoisture: [1, 0, 0, 1], // Sample soil moisture levels
-  temperature: [0, 1, 1, 0], // Sample temperature levels
-};
+      const wateringStatusElement = document.getElementById(`watering-status-${zone}`);
+      const scheduledStartTime = /* get scheduled start time */; // Replace with logic to retrieve scheduled time
+      const currentTime = new Date().toTimeString().slice(0, 5); // Format as HH:MM
 
-// Function to check sensor readings and trigger notifications
-function checkSensorReadings() {
-  var notificationElement = document.getElementById('notification-alert');
-
-  // Get the latest sensor readings (in this example, we're assuming the last data point)
-  var lastSoilMoisture = sensorData.soilMoisture[sensorData.soilMoisture.length - 1];
-  var lastTemperature = sensorData.temperature[sensorData.temperature.length - 1];
-
-  // Display notification alerts based on sensor readings
-  if (lastSoilMoisture === 0 && lastTemperature === 0) {
-    notificationElement.textContent = "No need to irrigate.";
-    notificationElement.style.color = 'green';
-  } else if (lastSoilMoisture === 1 && lastTemperature === 1) {
-    notificationElement.textContent = "Irrigate your farm.";
-    notificationElement.style.color = 'red';
-  } else {
-    notificationElement.textContent = "Sensor data inconclusive.";
-    notificationElement.style.color = 'black';
-  }
-}
-
-// Function to initialize the sensor chart
-function initializeSensorChart() {
-  var ctx = document.getElementById('sensor-chart').getContext('2d');
-  var sensorChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ["Morning", "Afternoon", "Evening", "Night"],
-      datasets: [{
-        label: 'Soil Moisture Level',
-        data: sensorData.soilMoisture,
-        borderColor: 'blue',
-        backgroundColor: 'rgba(0, 0, 255, 0.1)',
-      }, {
-        label: 'Temperature Level',
-        data: sensorData.temperature,
-        borderColor: 'red',
-        backgroundColor: 'rgba(255, 0, 0, 0.1)',
-      }]
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          min: 0,
-          max: 1,
-          ticks: {
-            stepSize: 1,
-            callback: function(value) {
-              return value === 0 ? 'Low' : (value === 1 ? 'High' : '');
-            }
-          }
-        }
+      if (moisture === 1 && currentTime === scheduledStartTime && pumpState === 'off') {
+        startPump(zone);
+        wateringStatusElement.textContent = 'Watering';
+        wateringStatusElement.classList.add('active');
+        showAlert('Watering started for Zone 1');
+      } else if ((moisture === 0 || currentTime !== scheduledStartTime) && pumpState === 'on') {
+        stopPump(zone);
+        wateringStatusElement.textContent = 'Idle';
+        wateringStatusElement.classList.remove('active');
+        showAlert('Watering stopped for Zone 1');
+      } else {
+        wateringStatusElement.textContent = pumpState === 'on' ? 'Pump Running' : 'Idle';
       }
     }
-  });
 
-  // Check sensor readings initially
-  checkSensorReadings();
-}
+    setInterval(() => {
+      // Replace with fetched values
+      updateSensorData(1, 1, 0, /* pump state */ 'off'); 
+    }, 60000);
 
-// Initialize the sensor chart
-initializeSensorChart();
+    const scheduleForm = document.getElementById('schedule-form');
 
-// Simulated sensor data (0 for low, 1 for high)
-var sensorData = {
-  soilMoisture: 0, // Sample soil moisture level
-  temperature: 1, // Sample temperature level
-};
+    scheduleForm.addEventListener('submit', (event) => {
+      event.preventDefault();
 
-// Function to check sensor readings and trigger notifications
-function checkWaterPumpStatus() {
-  var notificationElement = document.getElementById('notification-msg');
+      const startTime = document.getElementById('start-time').value;
+      const duration = parseInt(document.getElementById('duration').value);
 
-  // Check if sensor readings indicate water pump should be switched on or off
-  if (sensorData.soilMoisture === 0 && sensorData.temperature === 0) {
-    notificationElement.textContent = "Water pump switched off. No need to irrigate.";
-    notificationElement.style.color = 'green';
-  } else if (sensorData.soilMoisture === 1 && sensorData.temperature === 1) {
-    notificationElement.textContent = "Water pump switched on. Irrigating the farm.";
-    notificationElement.style.color = 'blue';
-  } else {
-    notificationElement.textContent = "Sensor data inconclusive.";
-    notificationElement.style.color = 'black';
-  }
-}
+      console.log(`Watering schedule for Zone 1: Start time - ${startTime}, Duration - ${duration} minutes`);
 
-// Simulated sensor data (0 for low, 1 for high)
-var sensorData = {
-  waterPumpStatus: 0, // 0 for off, 1 for on
-};
+      // Update UI to confirm schedule saved (optional)
+    });
 
-// Function to update water pump status
-function updateWaterPumpStatus() {
-  var waterPumpIcon = document.getElementById('water-pump-icon');
-  var waterPumpText = document.getElementById('water-pump-text');
+    function showAlert(message) {
+      const alertElement = document.getElementById('alert-message');
+      alertElement.textContent = message;
+      alertElement.style.display = 'block';
+      setTimeout(() => {
+        alertElement.textContent = '';
+        alertElement.style.display = 'none';
+      }, 5000); // Hide after 5 seconds
+    }
 
-  if (sensorData.waterPumpStatus === 0) {
-    waterPumpIcon.classList.remove('bi-droplet-fill');
-    waterPumpIcon.classList.add('bi-droplet');
-    waterPumpText.textContent = 'Off';
-  } else {
-    waterPumpIcon.classList.remove('bi-droplet');
-    waterPumpIcon.classList.add('bi-droplet-fill');
-    waterPumpText.textContent = 'On';
-  }
-}
-
-// Call the function initially
-updateWaterPumpStatus();
-
-// Call the function initially
-checkWaterPumpStatus();
-
-document.getElementById("back-button").addEventListener("click", function() {
+    document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("back-button").addEventListener("click", function() {
     window.location.href = "registration.html";
   });
-
-
-</script>
+  </script>
+</body>
+</html>
