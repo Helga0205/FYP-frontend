@@ -2,406 +2,356 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Dashboard</title>
+  <title>Dashboard</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-    <style>
-        /* Style for the Back Button */
-        #backButton {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: white;
-            color: black;
-            border: 2px solid black;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            z-index: 1000; /* Ensure the button is on top */
-        }
+  <style>
+    /* Style for the Back Button */
+    #backButton {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000;
+      /* Ensure the button is on top */
+    }
 
-        #backButton a {
-            color: black;
-            text-decoration: none;
-        }
+    #backButton a {
+      color: black;
+      text-decoration: none;
+    }
 
-        #backButton:hover {
-            background-color: black;
-            color: white;
-        }
+    #backButton:hover {
+      background-color: black;
+      color: white;
+    }
 
-        #backButton:hover a {
-            color: white;
-        }
-    </style>
+    #backButton:hover a {
+      color: white;
+    }
+  </style>
 </head>
 
 <body id="page-top">
-    <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
+  <h1 class="h3 mb-2 text-gray-800">Dashboard</h1>
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                    <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-                    <div class="topbar-divider d-none d-sm-block"></div>
-                </ul>
-            </nav>
-            <!-- End of Topbar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <!-- Topbar -->
+      <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- Topbar Navbar -->
+        <ul class="navbar-nav ml-auto">
+          <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+          <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+              <form class="form-inline mr-auto w-100 navbar-search">
+                <div class="input-group">
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                      <i class="fas fa-search fa-sm"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </li>
+          <div class="topbar-divider d-none d-sm-block"></div>
+        </ul>
+      </nav>
+      <!-- End of Topbar -->
 
-             <!-- bf5d622619db428db4b144213242606 -->
+      <!-- Firebase App (the core Firebase SDK) -->
+      <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyDK_CwJiaOBmTIyqD3YscnMK9ByANKyMAA",
+          authDomain: "adis-2d13b.firebaseapp.com",
+          databaseURL: "https://adis-2d13b-default-rtdb.firebaseio.com",
+          projectId: "adis-2d13b",
+          storageBucket: "adis-2d13b.appspot.com",
+          messagingSenderId: "486737690252",
+          appId: "1:486737690252:web:38c9744b70faa51b15c5a9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+      </script>
 
-    <script defer>
-        function fetchWeatherData(){
-            fetch("https://api.tomorrow.io/v4/weather/forecast?location=42.3478,-71.0466&apikey=IZQ3NrnWlC20dHlbtfVp0fnWza2X6it3",
-               { 
-                method:"GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    },
-                }
-            )
-            .then(async response => await response.json())
-            .then(data => {
-                console.log(data.timelines.minutely[0].values);
-                const currentData = data.timelines.minutely[0].values;
-                const currentTemp = currentData.temperature;
-                const currentHumidity = currentData.humidity;
+      <script>
+        function fetchWeatherData() {
+            db.collection("weatherData").orderBy("timestamp", "desc").limit(1).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const currentTemp = 26;
+                const currentHumidity = 88;
 
-                // Assign the temperature to the div
-                var temp = document.getElementById("temp").innerHTML = currentTemp;
-                var moisture = document.getElementById("moisture").innerHTML = currentHumidity > 50 ? "WET":"DRY";
-                document.getElementById("humidity").insertAdjacentHTML('beforeend',
-                 `<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${currentHumidity}</div>`
-                )
-                document.getElementById("humidityProgress").insertAdjacentHTML('beforeend', 
-                        `<div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="${currentHumidity}" aria-valuemin="0" aria-valuemax="100" id="progress"></div>`
-                    );
-
+                // Update the temperature and humidity cards
+                document.getElementById("temp").innerHTML = currentTemp;
+                document.getElementById("moisture").innerHTML = currentHumidity > 50 ? "WET" : "DRY";
+                document.getElementById("humidity").innerHTML = `<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">${currentHumidity}</div>`;
+                document.getElementById("humidityProgress").innerHTML = `<div class="progress-bar bg-info" role="progressbar" style="width: ${currentHumidity}%" aria-valuenow="${currentHumidity}" aria-valuemin="0" aria-valuemax="100" id="progress"></div>`;
+              });
             })
-            .catch(err => console.log("An error occurred when fetching data",err))
+            .catch((error) => {
+              console.log("Error getting documents: ", error);
+            });
         }
 
         fetchWeatherData();
-    </script>
+      </script>
 
-            <!-- Content Row -->
-            <div class="container">
-                <div class="row p-3 justify-content-center ">
-                    <!-- Earnings (Monthly) Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-success shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Temperature (°C)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="temp"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Earnings (Monthly) Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-info shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Humidity(%)</div>
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col-auto" id="humidity">
-                                                
-                                            </div>
-                                            <div class="col">
-                                                <div class="progress progress-sm mr-2" id="humidityProgress">
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Pending Requests Card Example -->
-                    <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2">
-                            <div class="card-body">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Moisture</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="moisture"></div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <!-- Content Row -->
+      <div class="container">
+        <div class="row p-3 justify-content-center">
+          <!-- Temperature Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Temperature (°C)</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="temp">26</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
                 </div>
+              </div>
             </div>
-
-            <div class="container-fluid">
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Charts</h1>
-                <!-- Content Row -->
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <!-- Line Chart -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Real-Time Temperature Line Chart (°C)</h6>
-                            </div>
-                            <div class="card-body">
-                                <div style="border-width: 5px; border-color: black;" class="chart-area">
-                                    <canvas id="myLineChart" style="width:100%;max-width:600px"></canvas>
-                                </div>
-                                <hr>
-                            </div>
+          </div>
+          <!-- Humidity Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Humidity(%)</div>
+                    <div class="row no-gutters align-items-center">
+                      <div class="col-auto" id="humidity">
+                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">88</div>
+                      </div>
+                      <div class="col">
+                        <div class="progress progress-sm mr-2" id="humidityProgress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" id="progress"></div>
                         </div>
-
-                        <!-- Bar Chart -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Real-Time Humidity Bar Chart (%)</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-bar">
-                                    <canvas id="myBarChart" style="width:100%;max-width:600px"></canvas>
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                  </div>
                 </div>
+              </div>
             </div>
-            <!-- /.container-fluid -->
+          </div>
+          <!-- Moisture Card Example -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Moisture</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800" id="moisture">WET</div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
 
-
-        <!-- Back Button -->
-        <button id="back-button" class="back-next-button" > <a href = "index.html">Back </a></button>
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"></span>
-                    </button>
+        <!-- Bar Chart -->
+        <div class="row p-3 justify-content-center">
+          <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+              <!-- Card Header - Dropdown -->
+              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Weather Summary</h6>
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-header">Dropdown Header:</div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                    <div class="chart-bar">
+                    <canvas id="myBarChart"></canvas>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>    <!-- Line Chart -->
+                    <div class="row p-3 justify-content-center">
+                      <div class="col-xl-8 col-lg-7">
+                        <div class="card shadow mb-4">
+                          <!-- Card Header - Dropdown -->
+                          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary">Temperature Trends</h6>
+                            <div class="dropdown no-arrow">
+                              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                <div class="dropdown-header">Dropdown Header:</div>
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Card Body -->
+                          <div class="card-body">
+                            <div class="chart-line">
+                              <canvas id="myLineChart"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <!-- Add the Back button -->
+                    <div id="backButton">
+                      <a href="http://localhost:3000">Back</a>
+                    </div>
+                  </div>
+                  <!-- End of Content Row -->
+                
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+                <!-- End of Content Wrapper -->
             </div>
-        </div>
-    </div>
-    
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
-    <script src="js/demo/chart-bar-demo.js"></script>
-
-    <script>
-        // Initial data for temperature and humidity
-        const initialSeconds = Array.from({length: 7}, (_, i) => i + 1);
-        const initialTemperatureData = [0, 0, 0, 0, 0, 0, 0];
-        const initialHumidityData = [0, 0, 0, 0, 0, 0, 0];
-
-        // Create the line chart for temperature
-        const ctxLine = document.getElementById('myLineChart').getContext('2d');
-        const temperatureChart = new Chart(ctxLine, {
-            type: 'line',
-            data: {
-                labels: initialSeconds,
-                datasets: [{
-                    label: 'Temperature (°C)',
-                    data: initialTemperatureData,
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1,
-                    fill: false
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            callback: function(value) {
-                                return value + '°C'; // Add degree Celsius unit to y-axis ticks
-                            }
-                        }
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            callback: function(value) {
-                                return value + 's'; // Add seconds unit to x-axis ticks
-                            }
-                        }
-                    }]
+            <!-- End of Page Wrapper -->
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
+            <!-- Charts scripts -->
+            <script>
+              // Bar Chart Data
+              var ctx = document.getElementById("myBarChart").getContext("2d");
+              var myBarChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                  labels: ["Temperature", "Humidity", "Moisture"],
+                  datasets: [{
+                    label: "Weather Data",
+                    backgroundColor: ["#4e73df", "#1cc88a", "#36b9cc"],
+                    borderColor: ["#4e73df", "#1cc88a", "#36b9cc"],
+                    data: [26, 88, 62],
+                  }],
                 },
-                tooltips: {
-                    callbacks: {
-                        label: function(tooltipItem, data) {
-                            return 'Temperature: ' + tooltipItem.yLabel + '°C'; // Add degree Celsius unit to tooltips
-                        }
-                    }
-                }
-            }
-        });
-
-        // Create the bar chart for humidity
-        const ctxBar = document.getElementById('myBarChart').getContext('2d');
-        const humidityChart = new Chart(ctxBar, {
-            type: 'bar',
-            data: {
-                labels: initialSeconds,
-                datasets: [{
-                    label: 'Humidity(%)',
-                    data: initialHumidityData,
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            callback: function(value) {
-                                return value + '%'; // Add percent unit to y-axis ticks
-                            }
-                        }
-                    }],
-                    xAxes: [{
-                        ticks: {
-                            callback: function(value) {
-                                return value + 's'; // Add seconds unit to x-axis ticks
-                            }
-                        }
-                    }]
+                options: {
+                  responsive: true,
+                  scales: {
+                    x: {
+                      grid: {
+                        display: false,
+                      },
+                      title: {
+                        display: true,
+                        text: "Parameters",
+                      },
+                    },
+                    y: {
+                      beginAtZero: true,
+                      title: {
+                        display: true,
+                        text: "Values",
+                      },
+                    },
+                  },
                 },
-                tooltips: {
-                    callbacks: {
-                        label: function(tooltipItem, data) {
-                            return 'Humidity: ' + tooltipItem.yLabel + '%'; // Add percent unit to tooltips
-                        }
-                    }
-                }
-            }
-        });
-
-        // Function to update charts with new data
-        function updateCharts() {
-            const now = new Date();
-            const seconds = now.getSeconds();
-
-            // Simulate new data for temperature and humidity
-            const newTemperature = Math.floor(Math.random() * 35); // Simulate temperature between 0 and 35
-            const newHumidity = Math.floor(Math.random() * 100); // Simulate humidity between 0 and 100
-
-            // Update temperature chart
-            temperatureChart.data.labels.push(seconds);
-            temperatureChart.data.datasets[0].data.push(newTemperature);
-            if (temperatureChart.data.labels.length > 7) {
-                temperatureChart.data.labels.shift();
-                temperatureChart.data.datasets[0].data.shift();
-            }
-            temperatureChart.update();
-
-            // Update humidity chart
-            humidityChart.data.labels.push(seconds);
-            humidityChart.data.datasets[0].data.push(newHumidity);
-            if (humidityChart.data.labels.length > 7) {
-                humidityChart.data.labels.shift();
-                humidityChart.data.datasets[0].data.shift();
-            }
-            humidityChart.update();
-        }
-
-        // Update charts every second
-        setInterval(updateCharts, 1000);
-
-        // Back button functionality
-        document.getElementById('backButton').addEventListener('click', function() {
-            window.history.back();
-        });
-    </script>
-
-</body>
-
-</html>
+              });
+          
+              // Line Chart Data
+              var ctx2 = document.getElementById("myLineChart").getContext("2d");
+              var myLineChart = new Chart(ctx2, {
+                type: "line",
+                data: {
+                  labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  datasets: [{
+                    label: "Temperature",
+                    backgroundColor: "rgba(78, 115, 223, 0.05)",
+                    borderColor: "#4e73df",
+                    data: [25, 28, 30, 26, 27],
+                    lineTension: 0.3,
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                    pointHitRadius: 20,
+                    pointBorderWidth: 2,
+                  }],
+                },
+                options: {
+                  responsive: true,
+                  scales: {
+                    x: {
+                      grid: {
+                        display: false,
+                      },
+                      title: {
+                        display: true,
+                        text: "Days",
+                      },
+                    },
+                    y: {
+                      beginAtZero: false,
+                      title: {
+                        display: true,
+                        text: "Temperature (°C)",
+                      },
+                    },
+                  },
+                },
+              });
+            </script>
+          </body>
+          </html>                
