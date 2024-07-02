@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automated Drip Irrigation System</title>
   <style>
+
+/* body {
+            background-image: url(img1.jpg); /* Replace 'path_to_your_image.jpg' with the actual path to your image 
+            background-size: cover; /* Cover the entire background 
+            background-position: center; /* Center the background image 
+            color:black; /* Text color 
+        }  */
+
     .sensor-data {
       border: 1px solid #ddd;
       padding: 10px;
@@ -19,8 +27,29 @@
       color: green;
     }
 
-    #back-button {
+    .button-container {
       margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .back-next-button {
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+      background-color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-next-button a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .back-next-button a:hover {
+      text-decoration: underline;
     }
 
   </style>
@@ -41,7 +70,7 @@
   <h2>Zone 1 Monitoring</h2>
   <div class="sensor-data">
     <h3>Zone 1</h3>
-    <p>Soil Moisture: <span id="soil-moisture-1">1 (Dry)</span></p>
+    <p>Soil Moisture: <span id="soil-moisture-1">0 (Wet)</span></p>
     <p>Water Usage: <span id="water-usage-1">0 L</span></p>
     <div class="watering-status">
       <p>Status: <span id="watering-status-1">Idle</span></p>
@@ -53,10 +82,10 @@
   <h2>Alerts (placeholder)</h2>
   <p id="alert-message"></p>
 
-
-    <button id="back-button" class="back-next-button">Back</button>
-
-  
+  <div class="button-container">
+  <button id="back-button" class="back-next-button" > <a href = "registration.html">Back </a></button>
+  <button id="next-button" class="back-next-button" > <a href = "dashboard.html">Next</a></button>
+</div>
   <script>
     function startPump(zone) {
       console.log(`Starting pump for Zone ${zone}`);
@@ -120,10 +149,13 @@
       }, 5000); // Hide after 5 seconds
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("back-button").addEventListener("click", function() {
-    window.location.href = "registration.html";
-  });
+     document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("back-button").addEventListener("click", function() {
+        window.location.href = "index.html";
+        
+      });
+    });
+    
   </script>
 </body>
 </html>
